@@ -1,0 +1,14 @@
+2025-08-16 11:59:58,157 - ERROR - database - Failed to count_user:
+Exception: 'AsyncSession' object has no attribute 'query'
+Traceback (most recent call last):
+  File "/Users/petr/PycharmProjects/CosmetologyClinic/database/requests.py", line 142, in count_user
+    count = await session.query(func.count(User.id)).scalar()
+                  ^^^^^^^^^^^^^
+AttributeError: 'AsyncSession' object has no attribute 'query'
+2025-08-16 12:06:37,133 - ERROR - database - Failed to count_user:
+Exception: AsyncSession.execute() takes from 2 to 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "/Users/petr/PycharmProjects/CosmetologyClinic/database/requests.py", line 145, in count_user
+    result = await session.execute(stmt, stmt2, stmt3)
+                   ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: AsyncSession.execute() takes from 2 to 3 positional arguments but 4 were given
